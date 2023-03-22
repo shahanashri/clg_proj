@@ -15,7 +15,7 @@
 			>
 		</div>
 	{:else}
-		<button on:click={() => cart.increment(id)}>Add {id}</button>
+		<button on:click={() => cart.increment(id)}>Add</button>
 	{/if}
 </div>
 
