@@ -34,11 +34,11 @@
 
 	li {
 		list-style-type: none;
-		padding: 0.2rem;
 		margin: 0 0.5rem;
 	}
 
 	a {
+		padding: 0.2rem;
 		text-decoration: none;
 		color: black;
 	}

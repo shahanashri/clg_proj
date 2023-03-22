@@ -1,14 +1,13 @@
 <script lang="ts">
-	import type { FoodDetails } from '../foods';
+	import { foods, type FoodDetails } from '../foods';
 	import FoodCard from './FoodCard.svelte';
 
-	export let foods: FoodDetails[];
-
+	export let food_ids: number[] = [];
 </script>
 
 <div class="foods-container">
-	{#each foods as food, i (i)}
-		<FoodCard {food} id={i}/>
+	{#each food_ids as id (id)}
+		<FoodCard food={foods[id]} {id}/>
 	{/each}
 </div>
 

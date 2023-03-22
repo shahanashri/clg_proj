@@ -5,32 +5,17 @@
 
 	let count: number;
 	$: count = $cart[id] == undefined ? 0 : $cart[id];
-
-	const increment = () => {
-		cart.update((foods) => {
-			foods[id] != undefined ? foods[id]++ : (foods[id] = 1);
-			return foods;
-		});
-	};
-
-	const decrement = () => {
-		cart.update((foods) => {
-			if (foods[id] != undefined && foods[id] > 0) foods[id]--;
-            if (foods[id] != undefined && foods[id] === 0) delete foods[id];
-			return foods;
-		});
-    };
 </script>
 
 <div>
 	{#if count > 0}
 		<div class="incdec">
-			<button on:click={decrement}>-</button><span>{count}</span><button on:click={increment}
-				>+</button
+			<button on:click={() => cart.decrement(id)}>-</button><span>{count}</span><button
+				on:click={() => cart.increment(id)}>+</button
 			>
 		</div>
 	{:else}
-		<button on:click={increment}>Add {id}</button>
+		<button on:click={() => cart.increment(id)}>Add {id}</button>
 	{/if}
 </div>
 
