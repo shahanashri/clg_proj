@@ -8,6 +8,7 @@ export interface FoodDetails {
 }
 
 export const foods: FoodDetails[] = [];
+//// **************************************************************************************
 
 /// Breakfasts
 foods.push({
@@ -29,7 +30,7 @@ foods.push({
 foods.push({
     name: 'Parotta',
     price: 10,
-    image_path: '/images/food.jpg',
+    image_path: '/images/parotta.JPG',
     food_type: ["Dinner"]
 });
 
@@ -40,6 +41,9 @@ foods.push({
     image_path: '/images/food.jpg',
     food_type: ["Snacks"]
 });
+
+
+//// **************************************************************************************
 
 export const getBreakfastMenu = (): number[] => {
     return foods.reduce((acc, curr, i) => {
