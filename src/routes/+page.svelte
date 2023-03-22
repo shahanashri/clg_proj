@@ -2,6 +2,7 @@
 	import { fade } from 'svelte/transition';
 	import FoodCard from '../components/FoodCard.svelte';
 	import FoodsGrid from '../components/FoodsGrid.svelte';
+	import { getBreakfastMenu } from '../foods';
 
 	let count = 0;
 
@@ -12,8 +13,15 @@
 
 <!-- <h1>Clicked {count} times</h1>
 	<button on:click={incrementCount}>Increment++</button> -->
-<div in:fade={{ duration: 500, delay: 500 }} out:fade={{duration:500}}>
-	<FoodsGrid />
+<div in:fade={{ duration: 500, delay: 500 }} out:fade={{ duration: 500 }}>
+	<h1>Breakfast Menu</h1>
+	<FoodsGrid foods={getBreakfastMenu()}/>
+	<h1>Lunch Menu</h1>
+	<FoodsGrid foods={getBreakfastMenu()}/>
+	<h1>Dinner Menu</h1>
+	<FoodsGrid foods={getBreakfastMenu()}/>
+	<h1>Snacks Menu</h1>
+	<FoodsGrid foods={getBreakfastMenu()}/>
 </div>
 
 <!-- <style>

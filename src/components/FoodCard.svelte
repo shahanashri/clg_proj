@@ -1,7 +1,10 @@
 <script lang="ts">
-	import type { FoodDetails } from "./types";
+	import type { FoodDetails } from "../foods";
+	import OrderButton from "./OrderButton.svelte";
+
 
     export let food: FoodDetails;
+	export let id: number;
 </script>
 
 <div class="food-card">
@@ -10,25 +13,27 @@
 	</div>
  <div class="details">
 	<h4>{food.name}</h4>
-    <button>Order</button>
+	<OrderButton {id}/>
  </div>
 </div>
 
 <style>
 	.food-card {
 		height: 13rem;
-		width: 9rem;
+		width: 16rem;
 		display: flex;
 		flex-direction: column;
         justify-content: space-between;
         align-items: center;
+		margin-right: minmax(0, 1rem);
 
         border-style: solid;
         border-width: 0.1rem;
         border-radius: 0.5rem;
         padding: 0.5rem;
 
-        background: linen;
+        /* background: linen; */
+		background: white;
 	}
 
     .img-container {
@@ -48,16 +53,4 @@
         justify-content: space-around;
         align-items: center;
     }
-
-	button {
-		padding: 0.15rem 0.2rem;
-		border-radius: 0.25rem;
-		border-style: none;
-		background: rgba(30, 10, 45, 0.856);
-		color: aliceblue;
-	}
-
-	button:active {
-		background: rgba(56, 20, 85, 0.856);
-	}
 </style>
