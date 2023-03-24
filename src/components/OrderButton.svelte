@@ -26,6 +26,7 @@
 		border-style: none;
 		background: rgb(219, 66, 35);
 		color: aliceblue;
+		cursor: pointer;
 	}
 
 	button:active {

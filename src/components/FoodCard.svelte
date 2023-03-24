@@ -9,7 +9,7 @@
 <div class="food-card">
 	<img src={food.image_path} alt="food and drinks" />
 	<div class="details">
-		<h4>{food.name}</h4>
+		<h4>{food.name}: Rs.{food.price}</h4>
 		<OrderButton {id} />
 	</div>
 </div>
@@ -39,6 +39,7 @@
 		overflow: hidden;
 		padding: 0.5rem;
 		object-fit: cover;
+		border-radius: 1rem;
 	}
 
 	.details {
