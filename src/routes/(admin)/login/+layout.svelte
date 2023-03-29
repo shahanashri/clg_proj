@@ -1,9 +1,7 @@
 <script lang="ts">
-	import NavBar from '../components/NavBar.svelte';
-	import '../global.css';
+	import '../../../global.css';
 </script>
 
-<NavBar />
 <div class="app">
 	<slot />
 </div>
@@ -11,7 +9,8 @@
 <style>
 	.app {
 		width: 90%;
+		height: 100vh;
 		margin: auto;
-		margin-top: 1rem;
+		display: flex;
 	}
 </style>

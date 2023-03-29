@@ -1,8 +1,8 @@
 <script lang="ts">
 	import { fade } from 'svelte/transition';
-	import CartItem from '../../components/CartItem.svelte';
-	import { cart } from '../../components/stores';
-	import { foods } from '../../foods';
+	import CartItem from '../../../components/CartItem.svelte';
+	import { cart } from '../../../components/stores';
+	import { foods } from '../../../foods';
 
 	const getKeys = Object.keys as <T extends object>(obj: T) => Array<keyof T>;
 	let order_ids: number[];

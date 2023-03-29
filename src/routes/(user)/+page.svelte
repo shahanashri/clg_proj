@@ -1,8 +1,7 @@
 <script lang="ts">
 	import { fade } from 'svelte/transition';
-	import FoodCard from '../components/FoodCard.svelte';
-	import FoodsGrid from '../components/FoodsGrid.svelte';
-	import { getBreakfastMenu, getDinnerMenu, getLunchMenu, getSnacksMenu } from '../foods';
+	import FoodsGrid from '../../components/FoodsGrid.svelte';
+	import { getBreakfastMenu, getDinnerMenu, getLunchMenu, getSnacksMenu } from '../../foods';
 
 	let count = 0;
 
