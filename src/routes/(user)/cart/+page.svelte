@@ -3,6 +3,8 @@
 	import CartItem from '../../../components/CartItem.svelte';
 	import { cart } from '../../../components/stores';
 	import { foods } from '../../../foods';
+	import { goto } from '$app/navigation';
+	import CustDetails from '../../../components/CustDetails.svelte';
 
 	const getKeys = Object.keys as <T extends object>(obj: T) => Array<keyof T>;
 	let order_ids: number[];
@@ -15,6 +17,8 @@
 			total += $cart[order_id] * foods[order_id].price;
 		});
 	}
+
+	let showCustDetailsPopup: boolean = false;
 </script>
 
 <div in:fade={{ duration: 500, delay: 500 }} out:fade={{ duration: 500 }}>
@@ -25,6 +29,13 @@
 	<h3>
 		Total: <span class="total">Rs.{total}</span>
 	</h3>
+	<div class="place-order">
+		<button on:click={() => {showCustDetailsPopup = true}}><h2>Place Order</h2></button>
+	</div>
+
+	{#if showCustDetailsPopup}
+		<CustDetails bind:showCustDetailsPopup />
+	{/if}
 </div>
 
 <style>
@@ -45,5 +56,26 @@
 		padding: 0.1rem 0.25rem;
 		border: 0.1rem solid black;
 		border-radius: 0.2rem;
+	}
+
+	.place-order {
+		padding: 0.7rem;
+		width: 70%;
+		margin: auto;
+		margin-bottom: 1rem;
+		text-align: end;
+	}
+
+	button {
+		padding: 0.15rem 0.5rem;
+		border: 0.1rem solid black;
+		border-radius: 0.2rem;
+		background: rgb(219, 66, 35);
+		color: aliceblue;
+		cursor: pointer;
+	}
+
+	button:active {
+		background: rgba(56, 20, 85, 0.856);
 	}
 </style>
